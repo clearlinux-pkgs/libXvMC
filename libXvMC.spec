@@ -4,7 +4,7 @@
 #
 Name     : libXvMC
 Version  : 1.0.10
-Release  : 7
+Release  : 8
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Summary  : The XvMC Library
@@ -74,8 +74,9 @@ rm -rf %{buildroot}
 %files dev
 %defattr(-,root,root,-)
 /usr/include/X11/extensions/XvMClib.h
-/usr/lib64/*.so
-/usr/lib64/pkgconfig/*.pc
+/usr/lib64/libXvMC.so
+/usr/lib64/libXvMCW.so
+/usr/lib64/pkgconfig/xvmc.pc
 
 %files doc
 %defattr(-,root,root,-)
@@ -83,4 +84,7 @@ rm -rf %{buildroot}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/*.so.*
+/usr/lib64/libXvMC.so.1
+/usr/lib64/libXvMC.so.1.0.0
+/usr/lib64/libXvMCW.so.1
+/usr/lib64/libXvMCW.so.1.0.0
