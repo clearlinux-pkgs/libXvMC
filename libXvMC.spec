@@ -4,7 +4,7 @@
 #
 Name     : libXvMC
 Version  : 1.0.10
-Release  : 9
+Release  : 10
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Summary  : The XvMC Library
