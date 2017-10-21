@@ -6,7 +6,7 @@
 #
 Name     : libXvMC
 Version  : 1.0.10
-Release  : 11
+Release  : 12
 URL      : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz
 Source99 : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.10.tar.gz.sig
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507593493
+export SOURCE_DATE_EPOCH=1508609342
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -112,7 +112,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1507593493
+export SOURCE_DATE_EPOCH=1508609342
 rm -rf %{buildroot}
 pushd ../build32/
 %make_install32
