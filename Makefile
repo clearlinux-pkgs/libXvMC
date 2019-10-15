@@ -1,5 +1,5 @@
 PKG_NAME := libXvMC
-URL = http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.11.tar.gz
+URL = http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.12.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
