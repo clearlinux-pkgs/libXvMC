@@ -6,11 +6,11 @@
 #
 Name     : libXvMC
 Version  : 1.0.12
-Release  : 19
-URL      : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.12.tar.gz
-Source0  : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.12.tar.gz
-Source1 : http://xorg.freedesktop.org/releases/individual/lib/libXvMC-1.0.12.tar.gz.sig
-Summary  : X11 Video Motion Compensation extension library
+Release  : 20
+URL      : https://www.x.org/releases/individual/lib/libXvMC-1.0.12.tar.gz
+Source0  : https://www.x.org/releases/individual/lib/libXvMC-1.0.12.tar.gz
+Source1  : https://www.x.org/releases/individual/lib/libXvMC-1.0.12.tar.gz.sig
+Summary  : The XvMC Library
 Group    : Development/Tools
 License  : MIT
 Requires: libXvMC-lib = %{version}-%{release}
@@ -43,7 +43,6 @@ Summary: dev components for the libXvMC package.
 Group: Development
 Requires: libXvMC-lib = %{version}-%{release}
 Provides: libXvMC-devel = %{version}-%{release}
-Requires: libXvMC = %{version}-%{release}
 Requires: libXvMC = %{version}-%{release}
 
 %description dev
@@ -96,6 +95,7 @@ license components for the libXvMC package.
 
 %prep
 %setup -q -n libXvMC-1.0.12
+cd %{_builddir}/libXvMC-1.0.12
 pushd ..
 cp -a libXvMC-1.0.12 build32
 popd
@@ -105,15 +105,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571162520
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1614230637
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -132,12 +131,12 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 cd ../build32;
-make VERBOSE=1 V=1 %{?_smp_mflags} check || :
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1571162520
+export SOURCE_DATE_EPOCH=1614230637
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libXvMC
 cp %{_builddir}/libXvMC-1.0.12/COPYING %{buildroot}/usr/share/package-licenses/libXvMC/61200da0f665a7b331f2f17b065b5a948fad40b8
